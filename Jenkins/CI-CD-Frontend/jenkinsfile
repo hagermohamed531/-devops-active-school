@@ -1,0 +1,11 @@
+pipeline {
+    agent {label "MEAN-APP"}
+
+    stages {
+        stage('Preparation') {
+            steps {
+                git branch: 'dev', credentialsId: '5acb4f7b-9e0c-4b89-9d69-617ab85a02ae', url: 'https://github.com/Maymaher/ActiveSchool-ClientSide.git'
+            }
+        }
+    }
+}

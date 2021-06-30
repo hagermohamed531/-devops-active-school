@@ -1,6 +1,13 @@
 version: '3.7'
 
 services:
+    client:
+      build: /home/ahmed/ITI/Graduation-Project/Active-School-Client/ActiveSchool-ClientSide
+      image: frontend-image
+      container_name: frontend-container
+      ports:
+        - "80:80"
+
     webapp-server:
       build:
         context: .
@@ -19,6 +26,7 @@ services:
         - MONGO_HOSTNAME=$MONGO_HOSTNAME
         - MONGO_PORT=$MONGO_PORT
         - MONGO_DB=$MONGO_DB
+
     mongo:
       image: mongo
       container_name: schoolapp-mongodb
